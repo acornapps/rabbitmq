@@ -58,7 +58,7 @@ metadata:
     app: {{.AppName}}
     apps: {{.AddonName}}
 spec:
-  replicas: 1
+  replicas: {{.Replicas}}
   selector:
     matchLabels:
       apps: {{.AddonName}}
@@ -74,9 +74,12 @@ spec:
         image: "bitnami/rabbitmq:latest"
         imagePullPolicy: IfNotPresent
         resources:
+          limits:
+            cpu: {{.LimitCpu}}
+            memory: {{.LimitMemory}}
           requests:
-            cpu: 100m
-            memory: 256Mi
+            cpu: {{.RequestCpu}}
+            memory: {{.RequestMemory}}
         env:
         - name: RABBITMQ_USERNAME
           value: "apps"

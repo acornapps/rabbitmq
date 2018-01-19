@@ -1,0 +1,14 @@
+builds: []
+variables:
+  - name: Image
+    value: bitnami/rabbitmq:latest
+  - name: Replicas
+    value: 1
+  - name: RequestCpu
+    value: 100m
+  - name: RequestMemory
+    value: 256Mi
+  - name: LimitCpu
+    value: 200m
+  - name: LimitMemory
+    value: 512Mi
