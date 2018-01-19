@@ -71,7 +71,7 @@ spec:
     spec:
       containers:
       - name: {{.AddonName}}
-        image: "bitnami/rabbitmq:latest"
+        image: {{.Image}}
         imagePullPolicy: IfNotPresent
         resources:
           limits:
